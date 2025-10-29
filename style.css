@@ -1,37 +1,112 @@
-/************************* DEBUG SETTINGS *************************/
+:root {
+    --bg-light: #f9fffb;
+    --text-dark: #2c3e50;
+    --font-main: 'Segoe UI', sans-serif;
 
-/* Settings to help find errors in your css
-   uncomment temporarily to enable */
+    --h1-bg: #C1ECAF;
+    --h1-text: #1e2d2b;
+    --h2-text: #1c8fbd;
+    --h2-border: var(--h1-bg);
+    --h3-text: #D67160;
 
-/* Add dotted line around all boxes.
-   This makes size of boxes visible.
-   Warning 1: this settings may change your layout.
-   Warning 2: keep the * as selector for all tags when uncommenting. */
-/*  * {border: 1px dotted black;}   */
-  
-/* Add semi-transparant dark background to all boxes
-   The more boxes are on top of eachother the darker tghe background color
-   Warning: keep the * as selector for all tags when uncommenting. */
-/*  * {background-color: rgba(0,0,0,5%);}  */
+    --list-bg: #e8f8f0;
+    --list-border: #A1D69A;
+    --strong-text: var(--h3-text);
+    --code-bg: #f0f0f0;
 
-/************************* BASE SETTINGS *************************/
+    --def-bg: #f2fef9;
+    --def-border: var(--h1-bg);
+    --def-title: var(--text-dark);
 
-/* Settings to make it easier for you
-   uncomment permanently when you understand the meaning of them */
-   
-/* border is included in width en height of boxes */
-/* * { box-sizing: border-box; } */
+    --nav-bg: var(--h2-text);
+    --nav-text: var(--code-bg);
 
-/* standard margin 0 pixels */
-/* * { margin: 0px; } */
+    --footer-bg: var(--h1-bg); 
+    --footer-text: var(--h1-text);
+}
 
-/* hide everything larger than the dimensions of the div-box
-   important side effect: browser usually doesn't take floats
-   into account when determining height of div, leading to 
-   div with height zero. With this settings, height of div-boxes
-   willl be large enough to fit floats inside. */
-/* div { overflow: hidden; }
 
-/************************* YOUR SETTINGS *************************/
 
-/* add your css here, feel free to use comments and order them logically for better readability */
+/* Kleine reset + basis */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  color: var(--text-dark);
+  background: var(--bg-light);
+  min-height: 100svh;
+  font-family: var(--font-main);
+}
+body{
+  display: grid;
+  grid-template-areas:
+  "header nav"
+  "main main"
+  "footer footer";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 300px 1fr 60px;
+}
+header{
+  grid-area: header;
+}
+nav{
+  grid-area: nav;
+  margin: 10px;
+}
+main{
+  grid-area: main;
+}
+footer{
+  grid-area: footer;
+}
+article{
+  flex: 0 0 25%;
+  margin: 25px;
+  padding: 1px;
+  border: #256694;
+
+}
+section{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+article img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* NAV – zoals geleerd in week 3 */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+nav a {
+  text-decoration: none;
+  color: var(--h1-text);
+}
+nav a:hover {
+  border-bottom: 2px solid var(--h3-text);
+}
+
+
+/* Andere stijling */
+footer {
+    background-color: var(--footer-bg);
+}
+h2 {
+    color: var(--h2-text);
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--h2-border);
+    padding-bottom: 5px;
+    margin: 10px 50px 20px 50px;
+}
+h1 {
+    color: var(--h1-text);
+    border-radius: 12px;
+    font-size: 2.2rem; 
+    margin-left: 20px;
+}
