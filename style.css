@@ -5,7 +5,7 @@
 
     --h1-bg: #C1ECAF;
     --h1-text: #1e2d2b;
-    --h2-text: #1c8fbd;
+    --h2-text: #000000;
     --h2-border: var(--h1-bg);
     --h3-text: #D67160;
 
@@ -35,6 +35,7 @@ body {
   background: var(--bg-light);
   min-height: 100svh;
   font-family: var(--font-main);
+  background-color: rgb(159, 225, 255);
 }
 body{
   display: grid;
@@ -47,6 +48,7 @@ body{
 }
 header{
   grid-area: header;
+  font-family: "Roboto", sans-serif;
 }
 nav{
   grid-area: nav;
@@ -99,10 +101,11 @@ footer {
 }
 h2 {
     color: var(--h2-text);
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     border-bottom: 2px solid var(--h2-border);
     padding-bottom: 5px;
     margin: 10px 50px 20px 50px;
+    font-family: "Roboto", sans-serif;
 }
 h1 {
     color: var(--h1-text);
